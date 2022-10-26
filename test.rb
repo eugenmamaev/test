@@ -10,14 +10,14 @@ while code != END_COMBINATION
   break if code.blank?
   success = false
   (WHEELS - 1).downto(0).each do |wheel|
-  	test_code = code.dup
-  	test_code[wheel] += 1
+    test_code = code.dup
+    test_code[wheel] += 1
     if code[wheel] == END_COMBINATION[wheel] || history.include?(test_code)
       if !success && wheel == 0
-	      values.pop
-	      code = values.last.dup
-	    end
-	    break if code.blank?
+        values.pop
+        code = values.last.dup
+      end
+      break if code.blank?
       next
     end
     success = true
